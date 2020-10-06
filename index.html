@@ -1,0 +1,46 @@
+<html>
+<!doctype html>
+
+
+
+<head>
+  <title>SowlesForum Lounge</title>
+  <meta charset = "UTF-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet" type="text/css">
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+  <?php include("header.php");
+  if (isset($_SESSION["loggedIn"])) {
+
+  ?>
+  <section id = "splash">
+    <div style = "display: inline-grid; grid-gap: 25px; grid-template-columns: auto auto 1fr; align-items: center;">
+      <h1 style = "margin: 0;">Lounge</h1>
+    </div>
+  </section>
+  <main style = "max-width: 100%">
+    <iframe allow="microphone; camera" style = "width: 100%; height: 800px; max-height: 100vh" src = "https://meet.jit.si/SowlesForumTerminalLounge"></iframe>
+  </main>
+    <h4><a href = "https://sowlesnet.com">Sowles Network</a> © 2019-2020</h4>
+</body>
+
+<script>
+window.onbeforeunload = function() {
+   return "Are you sure you want to exit the Lounge?";
+};
+</script>
+
+<?php
+  }
+  else {
+    header("location: index.php");
+  }
+?>
+
+
+
+</html>
